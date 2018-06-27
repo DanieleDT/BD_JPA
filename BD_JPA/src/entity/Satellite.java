@@ -60,7 +60,12 @@ public class Satellite {
 		TypedQuery<Satellite> queryShowAll = em.createQuery("SELECT s FROM satellite s", Satellite.class);
 		List<Satellite> resultAll = queryShowAll.getResultList();
 
-		for (Satellite s : resultAll) {
+		for (Satellite c : resultAll) {
+			 
+            sat.add(c);
+
+       }
+		for (Satellite s : sat) {
 			System.out.println(s.getNome() + " _ " + s.getAgenzia() + "  " + s.getPrimaOsservazione());
 		}
 	}
