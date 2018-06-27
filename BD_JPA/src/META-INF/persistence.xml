@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+	<persistence-unit name="sample">
+		<jta-data-source>java:/DefaultDS</jta-data-source>
+		<class>entity.satellite</class>
+		<properties>
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.HSQLDialect" />
+			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
+			<property name="javax.persistence.jdbc.driver"
+				value="org.postgresql.Driver" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:postgresql://localhost/exam" />
+			<property name="javax.persistence.jdbc.user"
+				value="postgres" />
+			<property name="javax.persistence.jdbc.password"
+				value="postgres" />
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.format_sql" value="false" />
+			<property name="hbm2ddl.auto" value="create" />
+		</properties>
+	</persistence-unit>
+
+
+	<persistence-unit name="examUnit">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>entity.Mappa</class>
+		<class>entity.Satellite</class>
+		<class>entity.Strumento</class>
+		<class>entity.BandaLunghezza</class>
+		<class>entity.Misura</class>
+		<class>entity.Sorgente</class>
+		<class>entity.FlussoSorgente</class>
+		<class>entity.Clump</class>
+		<class>entity.BandaClump</class>
+		<class>entity.Utente</class>
+
+
+
+		<properties>
+			<property name="javax.persistence.jdbc.driver"
+				value="org.postgresql.Driver" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:postgresql://localhost/exam" />
+			<property name="javax.persistence.jdbc.user"
+				value="postgres" />
+			<property name="javax.persistence.jdbc.password"
+				value="postgres" />
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.format_sql" value="false" />
+			<property name="hbm2ddl.auto" value="create" />
+		</properties>
+	</persistence-unit>
+
+</persistence>
